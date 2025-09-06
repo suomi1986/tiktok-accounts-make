@@ -12,7 +12,7 @@ ef home_list(self, user_data={}):
         else:
             data = self.helper.request_get(self, url)
         return data.json()
-
+        
     def search_user(self, text='teamtolga', session={}):
         url = self.api_url + "aweme/v1/discover/search/?cursor=0&keyword=" + text + "&count=10&type=1&hot_search=0&" + self.helper.query(
             self.helper.default_variable(self.global_variable))
@@ -21,6 +21,7 @@ ef home_list(self, user_data={}):
         else:
             data = self.helper.request_get(self, url)
         return data.json()
+
 
     def like_post(self, aweme_id=1, type='1', session={}):
         url = self.api_url + "aweme/v1/commit/item/digg/?aweme_id=" + aweme_id + "&type=" + type + "&retry_type=no_retry&from=3&" + self.helper.query(
